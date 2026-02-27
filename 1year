@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <title>Your 1 and only</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #111, #2c2c2c);
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+    }
+    .box {
+      max-width: 600px;
+      padding: 40px;
+      border-radius: 20px;
+      background: rgba(0,0,0,0.6);
+      box-shadow: 0 0 30px rgba(255,255,255,0.1);
+    }
+    h1 {
+      margin-bottom: 30px;
+    }
+    button {
+      margin: 10px;
+      padding: 12px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      background: #ff4d6d;
+      color: white;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #ff1e4d;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+<div class="box" id="content">
+  <h1>Γεια σου Στελλίνο μου ❤️</h1>
+  <p>Μπορεί να μην μιλάμε, αλλά εγώ σε σκέφτομαι. Εσύ; 🥺</p>
+  <button onclick="firstAnswer(true)">Ναι 💖</button>
+  <button onclick="firstAnswer(false)">Όχι 💔</button>
+</div>
+
+<script>
+  const content = document.getElementById("content");
+
+  function firstAnswer(answer) {
+    if (answer) {
+      content.innerHTML = `
+        <h1>🕰️</h1>
+        <p>Σε λιγότερο από 3 ώρες κλείνουμε 1 χρόνο μαζί 🖤<br>
+        Θα ήθελες να κάνουμε κάτι αύριο; ✨</p>
+        <button onclick="secondAnswer(true)">Ναι 😍</button>
+        <button onclick="secondAnswer(false)">Όχι 😐</button>
+      `;
+    } else {
+      content.innerHTML = `
+        <h1>💀</h1>
+        <p>Go date you, yourself, and your ass 🖕😌</p>
+      `;
+    }
+  }
+
+  function secondAnswer(answer) {
+    if (answer) {
+      content.innerHTML = `
+        <h1>💭</h1>
+        <p>Τι προτιμάς; 🥰</p>
+        <button onclick="finalAnswer()">🎁 Χαζά δωράκια → φαγητό 🍔 → δραστηριότητα 🎳</button>
+        <button onclick="finalAnswer()">🛋️ IKEA αεροδρόμιο → πράγματα για το σπιτάκι μας 🏠 → φαγητό 🍝 → δραστηριότητα 🎬</button>
+      `;
+    } else {
+      content.innerHTML = `
+        <h1>😐</h1>
+        <p>Ωραία, χωρίζουμε 💔</p>
+      `;
+    }
+  }
+
+  function finalAnswer() {
+    content.innerHTML = `
+      <h1>❤️</h1>
+      <p>Ό,τι κι αν διαλέξεις,<br>
+      εγώ διαλέγω εσένα.<br><br>
+      Your 1 and only 🖤✨</p>
+    `;
+  }
+</script>
+
+</body>
+</html>
